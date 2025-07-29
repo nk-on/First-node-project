@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "users": [
+    {
+      "id": 1,
+      "name": "Anna Müller",
+      "email": "anna.mueller@example.com",
+      "age": 28,
+      "country": "Germany"
+    },
+    {
+      "id": 2,
+      "name": "David Smith",
+      "email": "david.smith@example.com",
+      "age": 34,
+      "country": "USA"
+    },
+    {
+      "id": 3,
+      "name": "Fatima Khan",
+      "email": "fatima.khan@example.com",
+      "age": 25,
+      "country": "Pakistan"
+    }
+  ]
+}
