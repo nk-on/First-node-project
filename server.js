@@ -2,22 +2,22 @@ const http = require('http');
 const fs = require('fs')
 const server = http.createServer((req, res) => {
     const pathName = req.url;
-    if (pathName === '/') {
-        res.statusCode = 200;
+    function addStatusCode(code){
+        res.statusCode = code;
         res.setHeader('Content-Type', 'text/html');
+    }
+    if (pathName === '/') {
+        addStatusCode(200);
         res.end('<h1>Welcome to my page</h1>');
     } else if (pathName === '/about') {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/html');
+        addStatusCode(200);
         res.end('<h1>Lorem ipsum</h1>');
     } else if (pathName === '/api') {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/html');
+        addStatusCode(200);
         const data = fs.readFileSync('data.json', 'utf-8');
         res.end(`${data}`);
     } else {
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/html');
+        addStatusCode(404);
         res.end('<h1>404 Not found</h1>');
     }
 });
